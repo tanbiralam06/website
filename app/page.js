@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import FeatureCard from './components/FeatureCard';
+import FeatureCard from '../components/FeatureCard';
 
 export default function Home() {
   const features = [
