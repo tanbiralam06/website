@@ -61,16 +61,46 @@ export default function ComponentsPage() {
           isNew: true,
         },
         { 
+          name: 'File Input',
+          description: 'Input control for file uploads',
+          href: '/components/file-input',
+          isNew: true,
+        },
+        { 
           name: 'Radio',
           description: 'Single-selection control for forms',
           href: '/components/radio',
           isNew: false,
         },
         { 
+          name: 'Range Slider',
+          description: 'Dual handle slider for selecting ranges',
+          href: '/components/range-slider',
+          isNew: true,
+        },
+        { 
+          name: 'Select',
+          description: 'Dropdown selection control',
+          href: '/components/select',
+          isNew: false,
+        },
+        { 
+          name: 'Slider',
+          description: 'Visual control for selecting a value from a range',
+          href: '/components/slider',
+          isNew: true,
+        },
+        { 
           name: 'Switch',
           description: 'Toggle control for binary options',
           href: '/components/switch',
           isNew: true,
+        },
+        {
+          name: 'Textarea',
+          description: 'Multi-line text input control',
+          href: '/components/textarea',
+          isNew: false,
         },
       ]
     },
