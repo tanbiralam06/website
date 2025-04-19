@@ -96,7 +96,7 @@ export default function TablePage() {
             </p>
             <div className="bg-secondary-900 text-white p-4 rounded-md overflow-x-auto">
               <pre className="text-sm">
-                <code>npm install reacui</code>
+                <CodeBlock code="npm install reacui" language="bash" />
               </pre>
             </div>
           </section>
@@ -109,7 +109,7 @@ export default function TablePage() {
             </p>
             <div className="bg-secondary-900 text-white p-4 rounded-md overflow-x-auto">
               <pre className="text-sm">
-                <code>import {'{ Table }'} from 'reacui';</code>
+                <CodeBlock code="import { Table } from 'reacui';" language="javascript" />
               </pre>
             </div>
           </section>

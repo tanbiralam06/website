@@ -6,6 +6,7 @@ import TabGroup from '../../../components/TabGroup';
 import ComponentExample from '../../../components/ComponentExample';
 import TableOfContents from '../../../components/TableOfContents';
 import Banner from '../../../components/banner';
+import CodeBlock from '../../../components/CodeBlock';
 // Mock imports of the actual reacui components
 // In a real implementation, you would import from your component library
 // import { Badge } from 'reacui';
@@ -60,7 +61,7 @@ export default function BadgePage() {
             </p>
             <div className="bg-secondary-900 text-white p-4 rounded-md overflow-x-auto">
               <pre className="text-sm">
-                <code>npm install reacui</code>
+                <CodeBlock code="npm install reacui" language="bash" />
               </pre>
             </div>
           </section>
@@ -73,7 +74,7 @@ export default function BadgePage() {
             </p>
             <div className="bg-secondary-900 text-white p-4 rounded-md overflow-x-auto">
               <pre className="text-sm">
-                <code>import {'{ Badge }'} from 'reacui';</code>
+                <CodeBlock code="import { Badge } from 'reacui';" language="javascript" />
               </pre>
             </div>
           </section>
