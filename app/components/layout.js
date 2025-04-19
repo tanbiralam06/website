@@ -127,12 +127,15 @@ export default function ComponentsLayout({ children }) {
     {
       title: "BASIC COMPONENTS",
       items: [
+        { name: "Alert", href: "/components/alert", icon: "CircleInfo", isNew: true },
         { name: "Button", href: "/components/button", icon: "Square" },
         { name: "Badge", href: "/components/badge", icon: "Tag", isNew: true },
         { name: "Card", href: "/components/card", icon: "CreditCard" },
+        { name: "Grid", href: "/components/grid", icon: "Table", isNew: true },
         { name: "Input", href: "/components/input", icon: "FormInput" },
         { name: "Spinner", href: "/components/spinner", icon: "Loader2" },
-        { name: "Table", href: "/components/table", icon: "Table" }
+        { name: "Table", href: "/components/table", icon: "Table" },
+        { name: "Toast", href: "/components/toast", icon: "AlignLeft", isNew: true }
       ]
     },
     {

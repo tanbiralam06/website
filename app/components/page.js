@@ -7,6 +7,12 @@ export default function ComponentsPage() {
       description: 'Fundamental UI building blocks for your applications',
       components: [
         { 
+          name: 'Alert',
+          description: 'Feedback or status messages with multiple variants',
+          href: '/components/alert',
+          isNew: true,
+        },
+        { 
           name: 'Button',
           description: 'Standard button with variants, sizes, and states',
           href: '/components/button',
@@ -41,6 +47,12 @@ export default function ComponentsPage() {
           description: 'Display data in rows and columns',
           href: '/components/table',
           isNew: false,
+        },
+        { 
+          name: 'Toast',
+          description: 'Notifications that appear temporarily to provide feedback',
+          href: '/components/toast',
+          isNew: true,
         },
       ]
     },
@@ -143,6 +155,42 @@ export default function ComponentsPage() {
           description: 'Organize content into selectable views',
           href: '/components/tabs',
           isNew: false,
+        },
+      ]
+    },
+    {
+      title: 'Layout Components',
+      description: 'Components for organizing content on the page',
+      components: [
+        { 
+          name: 'Container',
+          description: 'Wrapper that centers content with max-width',
+          href: '/components/container',
+          isNew: false,
+        },
+        { 
+          name: 'Grid',
+          description: 'Flexible grid layout system for complex designs',
+          href: '/components/grid',
+          isNew: true,
+        },
+      ]
+    },
+    {
+      title: 'Feedback Components',
+      description: 'Components for providing user feedback',
+      components: [
+        { 
+          name: 'Alert',
+          description: 'Status messages to notify users about important information',
+          href: '/components/alert',
+          isNew: true,
+        },
+        { 
+          name: 'Toast',
+          description: 'Notifications that appear temporarily to provide feedback',
+          href: '/components/toast',
+          isNew: true,
         },
       ]
     },
