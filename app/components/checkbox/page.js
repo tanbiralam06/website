@@ -33,7 +33,7 @@ export default function CheckboxPage() {
           id="example1"
           className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
         />
-        <label htmlFor="example1" className="ml-2 block text-sm text-gray-900">
+        <label htmlFor="example1" className="ml-2 block text-sm text-gray-900 dark:text-white">
           Default checkbox
         </label>
       </div>
@@ -44,7 +44,7 @@ export default function CheckboxPage() {
           className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
           defaultChecked
         />
-        <label htmlFor="example2" className="ml-2 block text-sm text-gray-900">
+        <label htmlFor="example2" className="ml-2 block text-sm text-gray-900 dark:text-white">
           Checked checkbox
         </label>
       </div>
@@ -55,7 +55,7 @@ export default function CheckboxPage() {
           className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
           disabled
         />
-        <label htmlFor="example3" className="ml-2 block text-sm text-gray-500">
+        <label htmlFor="example3" className="ml-2 block text-sm text-gray-500 dark:text-gray-400">
           Disabled checkbox
         </label>
       </div>
@@ -64,21 +64,21 @@ export default function CheckboxPage() {
 
   const mainCode = `<div className="flex items-center">
   <Checkbox id="example1" />
-  <label htmlFor="example1" className="ml-2 block text-sm text-gray-900">
+  <label htmlFor="example1" className="ml-2 block text-sm text-gray-900 dark:text-white">
     Default checkbox
   </label>
 </div>
 
 <div className="flex items-center">
   <Checkbox id="example2" defaultChecked />
-  <label htmlFor="example2" className="ml-2 block text-sm text-gray-900">
+  <label htmlFor="example2" className="ml-2 block text-sm text-gray-900 dark:text-white">
     Checked checkbox
   </label>
 </div>
 
 <div className="flex items-center">
   <Checkbox id="example3" disabled />
-  <label htmlFor="example3" className="ml-2 block text-sm text-gray-500">
+  <label htmlFor="example3" className="ml-2 block text-sm text-gray-500 dark:text-gray-400">
     Disabled checkbox
   </label>
 </div>`;
@@ -154,7 +154,7 @@ export default function CheckboxPage() {
                       id="terms"
                       className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label htmlFor="terms" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+                    <label htmlFor="terms" className="ml-2 block text-sm text-gray-900 dark:text-white">
                       I agree to the terms and conditions
                     </label>
                   </div>
@@ -164,7 +164,7 @@ export default function CheckboxPage() {
                       id="newsletter"
                       className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+                    <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-900 dark:text-white">
                       Subscribe to our newsletter
                     </label>
                   </div>
@@ -172,14 +172,14 @@ export default function CheckboxPage() {
               }
               code={`<div className="flex items-center">
   <Checkbox id="terms" />
-  <label htmlFor="terms" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+  <label htmlFor="terms" className="ml-2 block text-sm text-gray-900 dark:text-white">
     I agree to the terms and conditions
   </label>
 </div>
 
 <div className="flex items-center">
   <Checkbox id="newsletter" />
-  <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+  <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-900 dark:text-white">
     Subscribe to our newsletter
   </label>
 </div>`}
@@ -202,7 +202,7 @@ export default function CheckboxPage() {
                       id="unchecked"
                       className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label htmlFor="unchecked" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+                    <label htmlFor="unchecked" className="ml-2 block text-sm text-gray-900 dark:text-white">
                       Unchecked
                     </label>
                   </div>
@@ -213,7 +213,7 @@ export default function CheckboxPage() {
                       className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                       defaultChecked
                     />
-                    <label htmlFor="checked" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+                    <label htmlFor="checked" className="ml-2 block text-sm text-gray-900 dark:text-white">
                       Checked
                     </label>
                   </div>
@@ -244,14 +244,14 @@ export default function CheckboxPage() {
               }
               code={`<div className="flex items-center">
   <Checkbox id="unchecked" />
-  <label htmlFor="unchecked" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+  <label htmlFor="unchecked" className="ml-2 block text-sm text-gray-900 dark:text-white">
     Unchecked
   </label>
 </div>
 
 <div className="flex items-center">
   <Checkbox id="checked" defaultChecked />
-  <label htmlFor="checked" className="ml-2 block text-sm text-gray-900 dark:text-gray-100">
+  <label htmlFor="checked" className="ml-2 block text-sm text-gray-900 dark:text-white">
     Checked
   </label>
 </div>
@@ -371,44 +371,44 @@ export default function CheckboxPage() {
                 </thead>
                 <tbody className="bg-white dark:bg-secondary-900">
                   <tr>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">id</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">id</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">
                       string
                     </td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">undefined</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700">ID for the checkbox input, useful for linking with labels</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">undefined</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 text-secondary-900 dark:text-secondary-100">ID for the checkbox input, useful for linking with labels</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">checked</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">checked</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">
                       boolean
                     </td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">undefined</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700">Controlled checked state of the checkbox</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">undefined</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 text-secondary-900 dark:text-secondary-100">Controlled checked state of the checkbox</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">defaultChecked</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">boolean</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">false</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700">Initial checked state for uncontrolled checkbox</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">defaultChecked</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">boolean</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">false</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 text-secondary-900 dark:text-secondary-100">Initial checked state for uncontrolled checkbox</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">disabled</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">boolean</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">false</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700">Whether the checkbox is disabled</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">disabled</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">boolean</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">false</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 text-secondary-900 dark:text-secondary-100">Whether the checkbox is disabled</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">onChange</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">function</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm">undefined</td>
-                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700">Function called when checkbox state changes</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">onChange</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">function</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 font-mono text-sm text-secondary-900 dark:text-secondary-100">undefined</td>
+                    <td className="px-4 py-2 border-b border-secondary-200 dark:border-secondary-700 text-secondary-900 dark:text-secondary-100">Function called when checkbox state changes</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 font-mono text-sm">className</td>
-                    <td className="px-4 py-2 font-mono text-sm">string</td>
-                    <td className="px-4 py-2 font-mono text-sm">''</td>
-                    <td className="px-4 py-2">Additional CSS classes to apply to the checkbox</td>
+                    <td className="px-4 py-2 font-mono text-sm text-secondary-900 dark:text-secondary-100">className</td>
+                    <td className="px-4 py-2 font-mono text-sm text-secondary-900 dark:text-secondary-100">string</td>
+                    <td className="px-4 py-2 font-mono text-sm text-secondary-900 dark:text-secondary-100">''</td>
+                    <td className="px-4 py-2 text-secondary-900 dark:text-secondary-100">Additional CSS classes to apply to the checkbox</td>
                   </tr>
                 </tbody>
               </table>
@@ -417,7 +417,7 @@ export default function CheckboxPage() {
         </div>
 
         {/* Table of Contents Sidebar */}
-        <div className="w-64 hidden lg:block">
+        <div className="w-64 hidden lg:block lg:flex-shrink-0">
           <div className="sticky top-24">
             <TableOfContents items={tocItems} />
           </div>

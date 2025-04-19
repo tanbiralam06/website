@@ -127,7 +127,9 @@ export default function ComponentsLayout({ children }) {
     {
       title: "BASIC COMPONENTS",
       items: [
+        { name: "Accordion", href: "/components/accordion", icon: "ChevronDown", isNew: true },
         { name: "Alert", href: "/components/alert", icon: "CircleInfo", isNew: true },
+        { name: "Avatar", href: "/components/avatar", icon: "CircleDot", isNew: true },
         { name: "Button", href: "/components/button", icon: "Square" },
         { name: "Badge", href: "/components/badge", icon: "Tag", isNew: true },
         { name: "Card", href: "/components/card", icon: "CreditCard" },
@@ -150,6 +152,14 @@ export default function ComponentsLayout({ children }) {
         { name: "Slider", href: "/components/slider", icon: "AlignLeft", isNew: true },
         { name: "Switch", href: "/components/switch", icon: "ToggleLeft", isNew: true },
         { name: "Textarea", href: "/components/textarea", icon: "AlignLeft", isNew: true }
+      ]
+    },
+    {
+      title: "OVERLAY COMPONENTS",
+      items: [
+        { name: "Modal", href: "/components/modal", icon: "Square", isNew: true },
+        { name: "Popover", href: "/components/popover", icon: "CreditCard", isNew: true },
+        { name: "Tooltip", href: "/components/tooltip", icon: "CircleInfo", isNew: true }
       ]
     }
   ];
