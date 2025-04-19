@@ -7,6 +7,12 @@ export default function ComponentsPage() {
       description: 'Fundamental UI building blocks for your applications',
       components: [
         { 
+          name: 'Alert',
+          description: 'Feedback or status messages with multiple variants',
+          href: '/components/alert',
+          isNew: true,
+        },
+        { 
           name: 'Button',
           description: 'Standard button with variants, sizes, and states',
           href: '/components/button',
@@ -42,6 +48,12 @@ export default function ComponentsPage() {
           href: '/components/table',
           isNew: false,
         },
+        { 
+          name: 'Toast',
+          description: 'Notifications that appear temporarily to provide feedback',
+          href: '/components/toast',
+          isNew: true,
+        },
       ]
     },
     {
@@ -61,16 +73,46 @@ export default function ComponentsPage() {
           isNew: true,
         },
         { 
+          name: 'File Input',
+          description: 'Input control for file uploads',
+          href: '/components/file-input',
+          isNew: true,
+        },
+        { 
           name: 'Radio',
           description: 'Single-selection control for forms',
           href: '/components/radio',
           isNew: false,
         },
         { 
+          name: 'Range Slider',
+          description: 'Dual handle slider for selecting ranges',
+          href: '/components/range-slider',
+          isNew: true,
+        },
+        { 
+          name: 'Select',
+          description: 'Dropdown selection control',
+          href: '/components/select',
+          isNew: false,
+        },
+        { 
+          name: 'Slider',
+          description: 'Visual control for selecting a value from a range',
+          href: '/components/slider',
+          isNew: true,
+        },
+        { 
           name: 'Switch',
           description: 'Toggle control for binary options',
           href: '/components/switch',
           isNew: true,
+        },
+        {
+          name: 'Textarea',
+          description: 'Multi-line text input control',
+          href: '/components/textarea',
+          isNew: false,
         },
       ]
     },
@@ -113,6 +155,42 @@ export default function ComponentsPage() {
           description: 'Organize content into selectable views',
           href: '/components/tabs',
           isNew: false,
+        },
+      ]
+    },
+    {
+      title: 'Layout Components',
+      description: 'Components for organizing content on the page',
+      components: [
+        { 
+          name: 'Container',
+          description: 'Wrapper that centers content with max-width',
+          href: '/components/container',
+          isNew: false,
+        },
+        { 
+          name: 'Grid',
+          description: 'Flexible grid layout system for complex designs',
+          href: '/components/grid',
+          isNew: true,
+        },
+      ]
+    },
+    {
+      title: 'Feedback Components',
+      description: 'Components for providing user feedback',
+      components: [
+        { 
+          name: 'Alert',
+          description: 'Status messages to notify users about important information',
+          href: '/components/alert',
+          isNew: true,
+        },
+        { 
+          name: 'Toast',
+          description: 'Notifications that appear temporarily to provide feedback',
+          href: '/components/toast',
+          isNew: true,
         },
       ]
     },

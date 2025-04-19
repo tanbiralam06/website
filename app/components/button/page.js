@@ -5,7 +5,8 @@ import Link from 'next/link';
 import TabGroup from '../../../components/TabGroup';
 import ComponentExample from '../../../components/ComponentExample';
 import TableOfContents from '../../../components/TableOfContents';
-
+import Banner from '../../../components/banner';
+import CodeBlock from '../../../components/CodeBlock';
 // Mock imports of the actual reacui components
 // In a real implementation, you would import from your component library
 // import { Button } from 'reacui';
@@ -42,18 +43,7 @@ export default function ButtonPage() {
 
   return (
     <>
-      {/* Beta Banner */}
-      <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-3 rounded-lg mb-6">
-        <div className="container flex justify-between items-center">
-          <div className="flex items-center">
-            <span className="mr-2">🚀</span>
-            <span>ReacUI is currently in <strong>Beta</strong>. We're actively improving it! ✨</span>
-          </div>
-          <button className="text-white hover:text-white/80 underline text-sm">
-            Share feedback
-          </button>
-        </div>
-      </div>
+      <Banner />
 
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="flex-1">
@@ -75,7 +65,7 @@ export default function ButtonPage() {
             </p>
             <div className="bg-secondary-900 text-white p-4 rounded-md overflow-x-auto">
               <pre className="text-sm">
-                <code>npm install reacui</code>
+                <CodeBlock code="npm install reacui" language="bash" />
               </pre>
             </div>
           </section>
@@ -88,7 +78,7 @@ export default function ButtonPage() {
             </p>
             <div className="bg-secondary-900 text-white p-4 rounded-md overflow-x-auto">
               <pre className="text-sm">
-                <code>import {'{ Button }'} from 'reacui';</code>
+                <CodeBlock code="import { Button } from 'reacui';" language="javascript" />
               </pre>
             </div>
           </section>

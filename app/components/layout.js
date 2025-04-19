@@ -94,6 +94,19 @@ function Icon({ name, className }) {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
       </svg>
+    ),
+    ChevronDown: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    ),
+    AlignLeft: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <line x1="17" y1="10" x2="3" y2="10" />
+        <line x1="21" y1="6" x2="3" y2="6" />
+        <line x1="21" y1="14" x2="3" y2="14" />
+        <line x1="17" y1="18" x2="3" y2="18" />
+      </svg>
     )
   };
 
@@ -107,19 +120,24 @@ export default function ComponentsLayout({ children }) {
     {
       title: "GETTING STARTED",
       items: [
-        { name: "Introduction", href: "/docs/introduction", icon: "CircleInfo" },
-        { name: "Installation", href: "/docs/installation", icon: "Download" }
+        { name: "Introduction", href: "/components/introduction", icon: "CircleInfo" },
+        { name: "Installation", href: "/components/installation", icon: "Download" }
       ]
     },
     {
       title: "BASIC COMPONENTS",
       items: [
+        { name: "Accordion", href: "/components/accordion", icon: "ChevronDown", isNew: true },
+        { name: "Alert", href: "/components/alert", icon: "CircleInfo", isNew: true },
+        { name: "Avatar", href: "/components/avatar", icon: "CircleDot", isNew: true },
         { name: "Button", href: "/components/button", icon: "Square" },
         { name: "Badge", href: "/components/badge", icon: "Tag", isNew: true },
         { name: "Card", href: "/components/card", icon: "CreditCard" },
+        { name: "Grid", href: "/components/grid", icon: "Table", isNew: true },
         { name: "Input", href: "/components/input", icon: "FormInput" },
         { name: "Spinner", href: "/components/spinner", icon: "Loader2" },
-        { name: "Table", href: "/components/table", icon: "Table" }
+        { name: "Table", href: "/components/table", icon: "Table" },
+        { name: "Toast", href: "/components/toast", icon: "AlignLeft", isNew: true }
       ]
     },
     {
@@ -127,8 +145,21 @@ export default function ComponentsLayout({ children }) {
       items: [
         { name: "Checkbox", href: "/components/checkbox", icon: "CheckSquare" },
         { name: "DateTimePicker", href: "/components/datetimepicker", icon: "Calendar", isNew: true },
-        { name: "Radio", href: "/components/radio", icon: "CircleDot" },
-        { name: "Switch", href: "/components/switch", icon: "ToggleLeft", isNew: true }
+        { name: "File Input", href: "/components/file-input", icon: "Download", isNew: true },
+        { name: "Radio", href: "/components/radio", icon: "CircleDot", isNew: true },
+        { name: "Range Slider", href: "/components/range-slider", icon: "AlignLeft", isNew: true },
+        { name: "Select", href: "/components/select", icon: "ChevronDown", isNew: true },
+        { name: "Slider", href: "/components/slider", icon: "AlignLeft", isNew: true },
+        { name: "Switch", href: "/components/switch", icon: "ToggleLeft", isNew: true },
+        { name: "Textarea", href: "/components/textarea", icon: "AlignLeft", isNew: true }
+      ]
+    },
+    {
+      title: "OVERLAY COMPONENTS",
+      items: [
+        { name: "Modal", href: "/components/modal", icon: "Square", isNew: true },
+        { name: "Popover", href: "/components/popover", icon: "CreditCard", isNew: true },
+        { name: "Tooltip", href: "/components/tooltip", icon: "CircleInfo", isNew: true }
       ]
     }
   ];

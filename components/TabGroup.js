@@ -9,8 +9,8 @@ export default function TabGroup({ example, code }) {
   return (
     <div className="border border-secondary-200 dark:border-secondary-800 rounded-lg overflow-hidden bg-white dark:bg-secondary-900">
       {/* Tabs Header */}
-      <div className="border-b border-secondary-200 dark:border-secondary-800 p-1 bg-secondary-50 dark:bg-secondary-800 flex justify-between items-center">
-        <div className="flex space-x-1 px-3">
+      <div className="border-b border-secondary-200 dark:border-secondary-800 p-1 bg-secondary-50 dark:bg-secondary-800 flex flex-col sm:flex-row justify-between items-center">
+        <div className="flex space-x-1 px-3 w-full sm:w-auto">
           <button 
             onClick={() => setActiveTab('preview')}
             className={`px-3 py-1.5 text-sm rounded-md ${
@@ -32,7 +32,7 @@ export default function TabGroup({ example, code }) {
             Code
           </button>
         </div>
-        <div className="pr-3">
+        <div className="pr-3 mt-2 sm:mt-0 w-full sm:w-auto text-right">
           <button 
             onClick={() => {
               navigator.clipboard.writeText(code);
@@ -46,15 +46,15 @@ export default function TabGroup({ example, code }) {
       </div>
 
       {/* Tab Content */}
-      <div className="w-full">
+      <div>
         {activeTab === 'preview' && (
-          <div className="p-8 flex flex-wrap gap-4 justify-center items-center">
+          <div className="p-4 sm:p-8 flex flex-wrap gap-4 justify-center items-center">
             {example}
           </div>
         )}
         
         {activeTab === 'code' && (
-          <div className="p-6">
+          <div className="p-3 sm:p-6">
             <CodeBlock code={code} />
           </div>
         )}
