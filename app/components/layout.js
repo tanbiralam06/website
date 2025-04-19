@@ -120,8 +120,8 @@ export default function ComponentsLayout({ children }) {
     {
       title: "GETTING STARTED",
       items: [
-        { name: "Introduction", href: "/docs/introduction", icon: "CircleInfo" },
-        { name: "Installation", href: "/docs/installation", icon: "Download" }
+        { name: "Introduction", href: "/components/introduction", icon: "CircleInfo" },
+        { name: "Installation", href: "/components/installation", icon: "Download" }
       ]
     },
     {

@@ -28,18 +28,18 @@ export default function CodeBlock({ code, language = 'jsx' }) {
 
   return (
     <div className="relative group">
-      <pre className="!m-0 text-sm !bg-[#1e1e1e] dark:!bg-[#1e1e1e] !p-4 rounded-lg overflow-x-auto max-h-[400px] overflow-y-auto shadow-lg font-mono">
+      <pre className="!m-0 text-xs sm:text-sm !bg-[#1e1e1e] dark:!bg-[#1e1e1e] !p-3 sm:!p-4 rounded-lg overflow-x-auto max-h-[300px] sm:max-h-[400px] overflow-y-auto shadow-lg font-mono">
         <code className={`language-${language}`}>{code}</code>
       </pre>
       <button 
         onClick={handleCopy}
-        className="absolute top-3 right-3 p-1.5 rounded-md bg-slate-700/70 hover:bg-slate-600 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
+        className="absolute top-2 right-2 sm:top-3 sm:right-3 p-1.5 rounded-md bg-slate-700/70 hover:bg-slate-600 transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:focus:opacity-100 touch-manipulation"
         aria-label="Copy code"
       >
         {copied ? (
-          <CheckIcon className="h-4 w-4 text-green-400" />
+          <CheckIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-400" />
         ) : (
-          <CopyIcon className="h-4 w-4 text-slate-300" />
+          <CopyIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-300" />
         )}
       </button>
     </div>
