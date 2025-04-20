@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-
+import SearchBar from '../components/Searchbar';
 
 // Dynamically import components with SSR disabled for animations
 const FeatureCard = dynamic(() => import('../components/FeatureCard'), { ssr: true });
@@ -124,10 +124,10 @@ export default function Home() {
 
   const codeAnimation = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
+      transition: {
         duration: 0.8,
         ease: "easeOut",
         delay: 0.6
@@ -227,7 +227,7 @@ function DashboardWidget({ user }) {
           </svg>
 
           {/* Animate light sweep effect */}
-          <motion.div 
+          <motion.div
             className="absolute top-0 -left-1/2 w-[150%] h-[500px] rotate-[-20deg] bg-gradient-to-r from-transparent via-white to-transparent opacity-[0.03]"
             initial={{ left: '-150%' }}
             animate={{ left: '100%' }}
@@ -249,7 +249,7 @@ function DashboardWidget({ user }) {
               transition={{ duration: 0.8 }}
               className="flex flex-col max-w-2xl text-center lg:text-left"
             >
-              <motion.div 
+              <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -260,17 +260,17 @@ function DashboardWidget({ user }) {
                   New Components Released
                 </span>
               </motion.div>
-              
+
               <h1 className="text-6xl font-bold tracking-tight text-white mb-4">
-                <motion.span 
+                <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.2 }}
                 >
-                  Elevate 
+                  Elevate
                   <span className="relative mx-2">
                     <span className="relative z-10 italic">every</span>
-                    <motion.span 
+                    <motion.span
                       className="absolute -z-10 bottom-0 left-0 right-0 h-3 bg-primary-500/30 rounded-sm"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
@@ -279,7 +279,7 @@ function DashboardWidget({ user }) {
                   </span>
                   interface
                 </motion.span>
-                <motion.span 
+                <motion.span
                   className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-primary-300 to-teal-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -289,7 +289,7 @@ function DashboardWidget({ user }) {
                 </motion.span>
               </h1>
 
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
@@ -298,14 +298,14 @@ function DashboardWidget({ user }) {
                 A thoughtfully crafted React component library that combines elegance with performance. Build exceptional user experiences with less code and more creativity.
               </motion.p>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.8 }}
                 className="flex flex-wrap mt-8 gap-4 mx-auto lg:mx-0 justify-center lg:justify-start"
               >
-              <Link
-                href="/docs/getting-started"
+                <Link
+                  href="/docs/getting-started"
                   className="relative group overflow-hidden rounded-lg"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-primary-600 group-hover:from-indigo-500 group-hover:to-primary-500 transition-all duration-300"></div>
@@ -321,10 +321,10 @@ function DashboardWidget({ user }) {
                       </svg>
                     </motion.span>
                   </div>
-              </Link>
-                
-              <Link
-                href="/components"
+                </Link>
+
+                <Link
+                  href="/components"
                   className="relative group rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300"
                 >
                   <div className="backdrop-blur-md px-5 py-3 flex items-center">
@@ -333,9 +333,9 @@ function DashboardWidget({ user }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
-              </Link>
+                </Link>
               </motion.div>
-              
+
               {/* Installation command */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -346,15 +346,15 @@ function DashboardWidget({ user }) {
                 <div className="flex items-center justify-between px-4 py-2 bg-indigo-900/30 border-b border-indigo-800/50">
                   <div className="text-xs text-indigo-300 font-medium">Install in your project</div>
                   <div className="flex space-x-2">
-                    <motion.button 
+                    <motion.button
                       className="text-xs text-indigo-400 hover:text-indigo-300 transition"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       Copy
                     </motion.button>
-            </div>
-          </div>
+                  </div>
+                </div>
                 <div className="p-4 font-mono text-sm text-indigo-300 overflow-x-auto">
                   <div className="flex">
                     <span className="text-primary-400 mr-2">$</span>
@@ -363,17 +363,17 @@ function DashboardWidget({ user }) {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1.5, delay: 1.2 }}
                     >
-                      npm install @reacui/core @reacui/hooks tailwindcss
+                      npm install reacui @reacui/latest tailwindcss
                     </motion.span>
-                    <motion.span 
-                      className="border-r-2 border-primary-500 ml-1 h-5" 
+                    <motion.span
+                      className="border-r-2 border-primary-500 ml-1 h-5"
                       animate={{ opacity: [1, 0, 1] }}
                       transition={{ duration: 0.8, repeat: Infinity }}
                     />
                   </div>
                 </div>
               </motion.div>
-              
+
               {/* Social proof */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -381,23 +381,28 @@ function DashboardWidget({ user }) {
                 transition={{ duration: 1, delay: 1.2 }}
                 className="mt-8 flex items-center space-x-4"
               >
+
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <motion.div 
-                      key={i} 
-                      className="w-8 h-8 rounded-full ring-2 ring-indigo-900 bg-gradient-to-br from-indigo-600 to-primary-600"
+                    <motion.img
+                      key={i}
+                      src={`https://randomuser.me/api/portraits/men/${i + 10}.jpg`}
+                      alt={`User ${i}`}
+                      className="w-8 h-8 rounded-full ring-2 ring-indigo-900 object-cover"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 1.2 + (i * 0.1) }}
                     />
                   ))}
                 </div>
+
+
                 <div className="text-sm text-indigo-200">
                   Trusted by <span className="font-semibold">thousands</span> of developers
                 </div>
               </motion.div>
             </motion.div>
-            
+
             {/* Interactive 3D component preview */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -419,7 +424,7 @@ function DashboardWidget({ user }) {
                   animate={{ rotate: -2 }}
                   transition={{ type: "spring", stiffness: 100 }}
                 ></motion.div>
-                
+
                 {/* Main component preview */}
                 <motion.div
                   className="relative w-full h-48 sm:h-60 rounded-xl border border-indigo-700/30 overflow-hidden shadow-xl shadow-indigo-900/20 z-30"
@@ -428,7 +433,7 @@ function DashboardWidget({ user }) {
                 >
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/5 via-primary-600/5 to-teal-500/5"></div>
-                  
+
                   {/* Component UI preview - cards carousel */}
                   <div className="h-full bg-indigo-950/90 backdrop-blur-sm p-4 flex items-center">
                     <motion.div
@@ -464,21 +469,21 @@ function DashboardWidget({ user }) {
                       ))}
                     </motion.div>
                   </div>
-                  
+
                   {/* Controls overlay */}
                   <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center">
-              <div className="flex space-x-1">
+                    <div className="flex space-x-1">
                       {Array.from({ length: 3 }).map((_, i) => (
-                        <motion.div 
-                          key={i} 
+                        <motion.div
+                          key={i}
                           className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-primary-400' : 'bg-indigo-700'}`}
                           whileHover={{ scale: 1.2 }}
                         />
                       ))}
-              </div>
-            </div>
+                    </div>
+                  </div>
                 </motion.div>
-                
+
                 {/* Floating badges */}
                 <motion.div
                   initial={{ opacity: 0, y: 20, x: -50 }}
@@ -491,9 +496,9 @@ function DashboardWidget({ user }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span>Accessible by default</span>
-      </div>
+                  </div>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: -20, x: 50 }}
                   animate={{ opacity: 1, y: 0, x: 30 }}
@@ -505,9 +510,9 @@ function DashboardWidget({ user }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     <span>High performance</span>
-            </div>
+                  </div>
                 </motion.div>
-                
+
                 {/* Code snippet */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -517,7 +522,7 @@ function DashboardWidget({ user }) {
                 >
                   <div className="text-indigo-500">{`import`} <span className="text-primary-400">{`{ Card }`}</span> {`from`} <span className="text-teal-400">{`'@reacui/core'`}</span></div>
                 </motion.div>
-          </div>
+              </div>
             </motion.div>
           </div>
 
@@ -535,10 +540,10 @@ function DashboardWidget({ user }) {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.5 + (index * 0.1), duration: 0.4 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  backgroundColor: 'rgba(99, 102, 241, 0.2)', 
-                  borderColor: 'rgba(129, 140, 248, 0.3)' 
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: 'rgba(99, 102, 241, 0.2)',
+                  borderColor: 'rgba(129, 140, 248, 0.3)'
                 }}
               >
                 {tech}
@@ -588,49 +593,49 @@ function DashboardWidget({ user }) {
             <rect width="100%" height="100%" fill="url(#grid-pattern)" />
           </svg>
         </div>
-        
+
         {/* Animated background elements */}
-        <motion.div 
+        <motion.div
           className="absolute -top-40 left-20 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1], 
+          animate={{
+            scale: [1, 1.2, 1],
             opacity: [0.15, 0.25, 0.15],
             x: [0, 30, 0],
             y: [0, 15, 0]
           }}
-          transition={{ 
-            duration: 12, 
+          transition={{
+            duration: 12,
             repeat: Infinity,
-            repeatType: "reverse" 
+            repeatType: "reverse"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute -bottom-20 right-10 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2], 
+          animate={{
+            scale: [1.2, 1, 1.2],
             opacity: [0.15, 0.2, 0.15],
             x: [0, -40, 0],
             y: [0, 20, 0]
           }}
-          transition={{ 
-            duration: 15, 
+          transition={{
+            duration: 15,
             repeat: Infinity,
-            repeatType: "reverse" 
+            repeatType: "reverse"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-700/5 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.1, 1], 
+          animate={{
+            scale: [1, 1.1, 1],
             opacity: [0.1, 0.15, 0.1],
           }}
-          transition={{ 
-            duration: 8, 
+          transition={{
+            duration: 8,
             repeat: Infinity,
-            repeatType: "reverse" 
+            repeatType: "reverse"
           }}
         />
-        
+
         <div className="container relative z-10 mx-auto px-4">
           {/* Section header */}
           <motion.div
@@ -646,8 +651,8 @@ function DashboardWidget({ user }) {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               <span className="relative">
-                Build interfaces 
-                <motion.span 
+                Build interfaces
+                <motion.span
                   className="absolute -z-10 bottom-2 left-0 right-0 h-3 bg-indigo-500/30 rounded-sm"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
@@ -663,7 +668,7 @@ function DashboardWidget({ user }) {
               Our meticulously crafted components are designed for flexibility, accessibility, and performance
             </p>
           </motion.div>
-          
+
           {/* Infinite auto-scrolling component carousel */}
           <div className="mb-16 overflow-hidden">
             <motion.div
@@ -674,7 +679,7 @@ function DashboardWidget({ user }) {
               className="relative"
             >
               {/* First row - left to right */}
-              <motion.div 
+              <motion.div
                 className="flex gap-6 mb-6"
                 animate={{ x: [0, -1920] }}
                 transition={{
@@ -685,9 +690,9 @@ function DashboardWidget({ user }) {
                 }}
               >
                 {/* Component cards - row 1 */}
-                <ComponentCard 
-                  title="Buttons" 
-                  description="Interactive controls" 
+                <ComponentCard
+                  title="Buttons"
+                  description="Interactive controls"
                   delay={0.1}
                   color="from-indigo-500 to-blue-600"
                 >
@@ -701,36 +706,36 @@ function DashboardWidget({ user }) {
                     <button className="px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white rounded-md shadow-sm text-sm font-medium transition-all">
                       Danger
                     </button>
-          </div>
+                  </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Inputs" 
-                  description="Form controls & elements" 
+
+                <ComponentCard
+                  title="Inputs"
+                  description="Form controls & elements"
                   delay={0.2}
                   color="from-sky-500 to-teal-500"
                 >
                   <div className="space-y-3">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       placeholder="Enter your name"
                       className="w-full px-3 py-2 bg-indigo-950/50 border border-indigo-800 focus:border-indigo-500 rounded-md text-white text-sm transition-all"
                     />
                     <div className="flex items-center">
-                      <input 
+                      <input
                         type="checkbox"
                         className="h-4 w-4 rounded border-indigo-700 bg-indigo-950/50 text-indigo-600 focus:ring-indigo-500"
                       />
                       <label className="ml-2 text-sm text-indigo-300">
                         Remember me
                       </label>
-                </div>
+                    </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Cards" 
-                  description="Versatile containers" 
+
+                <ComponentCard
+                  title="Cards"
+                  description="Versatile containers"
                   delay={0.3}
                   color="from-violet-500 to-purple-600"
                 >
@@ -743,10 +748,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Alerts" 
-                  description="Status notifications" 
+
+                <ComponentCard
+                  title="Alerts"
+                  description="Status notifications"
                   delay={0.3}
                   color="from-amber-500 to-orange-600"
                 >
@@ -762,10 +767,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Badges" 
-                  description="Status indicators" 
+
+                <ComponentCard
+                  title="Badges"
+                  description="Status indicators"
                   delay={0.4}
                   color="from-fuchsia-500 to-pink-600"
                 >
@@ -781,10 +786,10 @@ function DashboardWidget({ user }) {
                     </span>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Modals" 
-                  description="Dialog windows" 
+
+                <ComponentCard
+                  title="Modals"
+                  description="Dialog windows"
                   delay={0.5}
                   color="from-rose-500 to-red-600"
                 >
@@ -801,11 +806,11 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
+
                 {/* Duplicate first 3 components to ensure seamless looping */}
-                <ComponentCard 
-                  title="Buttons" 
-                  description="Interactive controls" 
+                <ComponentCard
+                  title="Buttons"
+                  description="Interactive controls"
                   delay={0.1}
                   color="from-indigo-500 to-blue-600"
                 >
@@ -821,21 +826,21 @@ function DashboardWidget({ user }) {
                     </button>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Inputs" 
-                  description="Form controls & elements" 
+
+                <ComponentCard
+                  title="Inputs"
+                  description="Form controls & elements"
                   delay={0.2}
                   color="from-sky-500 to-teal-500"
                 >
                   <div className="space-y-3">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       placeholder="Enter your name"
                       className="w-full px-3 py-2 bg-indigo-950/50 border border-indigo-800 focus:border-indigo-500 rounded-md text-white text-sm transition-all"
                     />
                     <div className="flex items-center">
-                      <input 
+                      <input
                         type="checkbox"
                         className="h-4 w-4 rounded border-indigo-700 bg-indigo-950/50 text-indigo-600 focus:ring-indigo-500"
                       />
@@ -845,10 +850,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Cards" 
-                  description="Versatile containers" 
+
+                <ComponentCard
+                  title="Cards"
+                  description="Versatile containers"
                   delay={0.3}
                   color="from-violet-500 to-purple-600"
                 >
@@ -862,9 +867,9 @@ function DashboardWidget({ user }) {
                   </div>
                 </ComponentCard>
               </motion.div>
-              
+
               {/* Second row - right to left (reverse direction) */}
-              <motion.div 
+              <motion.div
                 className="flex gap-6"
                 animate={{ x: [-1920, 0] }}
                 transition={{
@@ -875,9 +880,9 @@ function DashboardWidget({ user }) {
                 }}
               >
                 {/* Component cards - row 2 */}
-                <ComponentCard 
-                  title="Tables" 
-                  description="Data organization" 
+                <ComponentCard
+                  title="Tables"
+                  description="Data organization"
                   delay={0.6}
                   color="from-emerald-500 to-teal-600"
                 >
@@ -896,10 +901,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Tabs" 
-                  description="Content organization" 
+
+                <ComponentCard
+                  title="Tabs"
+                  description="Content organization"
                   delay={0.7}
                   color="from-blue-500 to-indigo-600"
                 >
@@ -914,10 +919,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Dropdowns" 
-                  description="Selection menus" 
+
+                <ComponentCard
+                  title="Dropdowns"
+                  description="Selection menus"
                   delay={0.8}
                   color="from-cyan-500 to-sky-600"
                 >
@@ -935,10 +940,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Toggles" 
-                  description="Interactive switches" 
+
+                <ComponentCard
+                  title="Toggles"
+                  description="Interactive switches"
                   delay={0.9}
                   color="from-primary-500 to-indigo-600"
                 >
@@ -949,10 +954,10 @@ function DashboardWidget({ user }) {
                     </button>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Progress" 
-                  description="Status indicators" 
+
+                <ComponentCard
+                  title="Progress"
+                  description="Status indicators"
                   delay={1}
                   color="from-amber-500 to-orange-600"
                 >
@@ -966,10 +971,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Tooltips" 
-                  description="Contextual information" 
+
+                <ComponentCard
+                  title="Tooltips"
+                  description="Contextual information"
                   delay={1.1}
                   color="from-violet-500 to-fuchsia-600"
                 >
@@ -983,10 +988,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Avatars" 
-                  description="User representations" 
+
+                <ComponentCard
+                  title="Avatars"
+                  description="User representations"
                   delay={1.2}
                   color="from-emerald-500 to-teal-600"
                 >
@@ -1002,11 +1007,11 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
+
                 {/* Duplicate last 3 components to ensure seamless looping */}
-                <ComponentCard 
-                  title="Tables" 
-                  description="Data organization" 
+                <ComponentCard
+                  title="Tables"
+                  description="Data organization"
                   delay={0.6}
                   color="from-emerald-500 to-teal-600"
                 >
@@ -1025,10 +1030,10 @@ function DashboardWidget({ user }) {
                     </div>
                   </div>
                 </ComponentCard>
-                
-                <ComponentCard 
-                  title="Tabs" 
-                  description="Content organization" 
+
+                <ComponentCard
+                  title="Tabs"
+                  description="Content organization"
                   delay={0.7}
                   color="from-blue-500 to-indigo-600"
                 >
@@ -1046,9 +1051,11 @@ function DashboardWidget({ user }) {
               </motion.div>
             </motion.div>
           </div>
-          
+          <div className="flex justify-center mb-8">
+            <SearchBar placeholder="Search components..." />
+          </div>
           {/* Component search bar */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1061,8 +1068,8 @@ function DashboardWidget({ user }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Search for components..."
                 className="w-full bg-transparent py-3 pl-10 pr-4 text-indigo-100 placeholder-indigo-400 focus:outline-none"
               />
@@ -1071,8 +1078,8 @@ function DashboardWidget({ user }) {
                 <kbd className="px-1.5 py-0.5 rounded border border-indigo-700 bg-indigo-800/50">K</kbd>
               </div>
             </div>
-          </motion.div>
-          
+          </motion.div> */}
+
           {/* Call to action */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1081,7 +1088,7 @@ function DashboardWidget({ user }) {
             transition={{ duration: 0.7 }}
             className="text-center"
           >
-            <Link 
+            <Link
               href="/components"
               className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-primary-600 hover:from-indigo-500 hover:to-primary-500 text-white font-medium shadow-lg shadow-indigo-900/30 transition-all duration-300"
             >
@@ -1094,43 +1101,43 @@ function DashboardWidget({ user }) {
               Access to over 50+ customizable components
             </p>
           </motion.div>
-              </div>
+        </div>
       </section>
-      
+
       {/* Define the ComponentCard subcomponent */}
       {ComponentCard}
-      
+
       {/* Testimonials Section */}
       <section className="py-24 relative overflow-hidden bg-gradient-to-b from-secondary-900 to-secondary-950">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
-        
+
         {/* Background effects */}
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-700/50 to-transparent"></div>
-        <motion.div 
+        <motion.div
           className="absolute -left-32 top-1/4 w-96 h-96 rounded-full bg-primary-900/20 blur-3xl"
-          animate={{ 
+          animate={{
             opacity: [0.3, 0.5, 0.3],
-            scale: [1, 1.1, 1], 
+            scale: [1, 1.1, 1],
           }}
-          transition={{ 
-            duration: 8, 
+          transition={{
+            duration: 8,
             repeat: Infinity,
-            repeatType: "reverse" 
+            repeatType: "reverse"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute -right-32 bottom-1/4 w-96 h-96 rounded-full bg-fuchsia-900/10 blur-3xl"
-          animate={{ 
+          animate={{
             opacity: [0.2, 0.4, 0.2],
-            scale: [1.1, 1, 1.1], 
+            scale: [1.1, 1, 1.1],
           }}
-          transition={{ 
-            duration: 10, 
+          transition={{
+            duration: 10,
             repeat: Infinity,
-            repeatType: "reverse" 
+            repeatType: "reverse"
           }}
         />
-        
+
         <div className="container relative z-10">
           {/* Section heading */}
           <motion.div
@@ -1150,7 +1157,7 @@ function DashboardWidget({ user }) {
               Join thousands of developers who are building amazing projects with ReacUI
             </p>
           </motion.div>
-          
+
           {/* Testimonials grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Testimonial 1 */}
@@ -1181,7 +1188,7 @@ function DashboardWidget({ user }) {
                 "ReacUI has dramatically improved our development velocity. The components are well-designed, accessible, and incredibly flexible. It's now our go-to UI library for all new projects."
               </p>
             </motion.div>
-            
+
             {/* Testimonial 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1210,7 +1217,7 @@ function DashboardWidget({ user }) {
                 "As both a designer and developer, I appreciate how ReacUI bridges the gap between beautiful design and functional code. The attention to detail in every component is impressive."
               </p>
             </motion.div>
-            
+
             {/* Testimonial 3 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1246,7 +1253,7 @@ function DashboardWidget({ user }) {
       {/* Enhanced CTA Section */}
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-gradient-to-tr from-primary-800 via-primary-700 to-purple-700"></div>
-        
+
         {/* Enhanced background effects */}
         <div className="absolute inset-0">
           {/* Animated floating particles */}
@@ -1274,25 +1281,25 @@ function DashboardWidget({ user }) {
               />
             ))}
           </div>
-          
+
           {/* Background decoration */}
           <svg className="absolute right-0 top-0 h-full w-1/3 translate-x-1/3 transform text-white opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
-          
-          <motion.div 
+
+          <motion.div
             className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/0 via-white/5 to-primary-500/0"
-            animate={{ 
-              x: ['-100%', '100%'], 
+            animate={{
+              x: ['-100%', '100%'],
             }}
-            transition={{ 
-              duration: 15, 
+            transition={{
+              duration: 15,
               repeat: Infinity,
-              ease: "linear" 
+              ease: "linear"
             }}
           />
         </div>
-        
+
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -1324,7 +1331,7 @@ function DashboardWidget({ user }) {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 mt-6">
                 <h3 className="text-2xl font-semibold text-white mb-3">Performance Optimized</h3>
                 <ul className="space-y-3">
@@ -1349,7 +1356,7 @@ function DashboardWidget({ user }) {
                 </ul>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1357,7 +1364,7 @@ function DashboardWidget({ user }) {
               transition={{ duration: 0.7 }}
               className="text-center lg:text-left"
             >
-              <motion.h2 
+              <motion.h2
                 className="text-4xl md:text-5xl font-bold text-white mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1366,8 +1373,8 @@ function DashboardWidget({ user }) {
               >
                 Ready to build your next project?
               </motion.h2>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-xl text-primary-100 mb-8 max-w-xl mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1376,8 +1383,8 @@ function DashboardWidget({ user }) {
               >
                 Start building beautiful interfaces with our component library in minutes. Install the package and begin integrating components into your application.
               </motion.p>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1394,7 +1401,7 @@ function DashboardWidget({ user }) {
                     </span>
                   </Link>
                 </motion.div>
-                
+
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Link href="https://github.com/yourusername/reacui" className="btn bg-primary-800/80 text-white hover:bg-primary-800 border border-primary-600 backdrop-blur-sm">
                     <span className="flex items-center">
@@ -1406,9 +1413,9 @@ function DashboardWidget({ user }) {
                   </Link>
                 </motion.div>
               </motion.div>
-              
+
               {/* Installation command */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1434,7 +1441,7 @@ function DashboardWidget({ user }) {
           </div>
         </div>
       </section>
-      
+
       {/* Grid pattern addition to global styles */}
       <style jsx global>{`
         .bg-grid-pattern {
@@ -1456,7 +1463,7 @@ function DashboardWidget({ user }) {
           min-height: 1.5rem;
         }
       `}</style>
-      
+
       {/* CTA section */}
       <section className="bg-primary-900 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
@@ -1479,7 +1486,7 @@ function DashboardWidget({ user }) {
             >
               Browse Components
             </Link>
-            
+
           </div>
         </div>
       </section>
