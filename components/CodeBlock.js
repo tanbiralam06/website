@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from 'react';
 import Prism from 'prismjs';
@@ -11,7 +11,7 @@ import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-markdown';
-import 'prism-themes/themes/prism-vsc-dark-plus.css'; // Using VS Code dark theme for better colors
+import 'prism-themes/themes/prism-vsc-dark-plus.css'; // VS Code theme
 
 export default function CodeBlock({ code, language = 'jsx' }) {
   const [copied, setCopied] = useState(false);
@@ -27,10 +27,12 @@ export default function CodeBlock({ code, language = 'jsx' }) {
   };
 
   return (
-    <div className="relative group">
-      <pre className="!m-0 text-xs sm:text-sm !bg-[#1e1e1e] dark:!bg-[#1e1e1e] !p-3 sm:!p-4 rounded-lg overflow-x-auto max-h-[300px] sm:max-h-[400px] overflow-y-auto shadow-lg font-mono">
-        <code className={`language-${language}`}>{code}</code>
-      </pre>
+    <div className="relative group rounded-lg overflow-hidden">
+      <div className="w-full overflow-x-auto rounded-lg scrollbar-thin scrollbar-thumb-zinc-600 scrollbar-track-transparent">
+        <pre className="!m-0 text-xs sm:text-sm !bg-[#1e1e1e] dark:!bg-[#1e1e1e] !p-3 sm:!p-4 min-w-full max-h-[300px] sm:max-h-[400px] overflow-y-auto font-mono">
+          <code className={`language-${language}`}>{code}</code>
+        </pre>
+      </div>
       <button 
         onClick={handleCopy}
         className="absolute top-2 right-2 sm:top-3 sm:right-3 p-1.5 rounded-md bg-slate-700/70 hover:bg-slate-600 transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:focus:opacity-100 touch-manipulation"
@@ -79,4 +81,4 @@ function CheckIcon({ className }) {
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
   );
-} 
+}

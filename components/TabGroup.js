@@ -7,7 +7,7 @@ export default function TabGroup({ example, code }) {
   const [activeTab, setActiveTab] = useState('preview');
 
   return (
-    <div className="border border-secondary-200 dark:border-secondary-800 rounded-lg overflow-hidden bg-white dark:bg-secondary-900">
+    <div className="border border-secondary-200 dark:border-secondary-800 rounded-lg  bg-white dark:bg-secondary-900">
       {/* Tabs Header */}
       <div className="border-b border-secondary-200 dark:border-secondary-800 p-1 bg-secondary-50 dark:bg-secondary-800 flex flex-col sm:flex-row justify-between items-center">
         <div className="flex space-x-1 px-3 w-full sm:w-auto">

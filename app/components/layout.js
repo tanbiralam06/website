@@ -147,7 +147,7 @@ export default function ComponentsLayout({ children }) {
         { name: "DateTimePicker", href: "/components/datetimepicker", icon: "Calendar", isNew: true },
         { name: "File Input", href: "/components/file-input", icon: "Download", isNew: true },
         { name: "Radio", href: "/components/radio", icon: "CircleDot", isNew: true },
-        { name: "Range Slider", href: "/components/range-slider", icon: "AlignLeft", isNew: true },
+        // { name: "Range Slider", href: "/components/range-slider", icon: "AlignLeft", isNew: true },
         { name: "Select", href: "/components/select", icon: "ChevronDown", isNew: true },
         { name: "Slider", href: "/components/slider", icon: "AlignLeft", isNew: true },
         { name: "Switch", href: "/components/switch", icon: "ToggleLeft", isNew: true },

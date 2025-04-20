@@ -84,12 +84,12 @@ export default function ComponentsPage() {
           href: '/components/radio',
           isNew: false,
         },
-        { 
-          name: 'Range Slider',
-          description: 'Dual handle slider for selecting ranges',
-          href: '/components/range-slider',
-          isNew: true,
-        },
+        // { 
+        //   name: 'Range Slider',
+        //   description: 'Dual handle slider for selecting ranges',
+        //   href: '/components/range-slider',
+        //   isNew: true,
+        // },
         { 
           name: 'Select',
           description: 'Dropdown selection control',
