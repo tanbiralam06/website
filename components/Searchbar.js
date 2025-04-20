@@ -20,6 +20,7 @@ const SEARCHABLE_COMPONENTS = [
 const SearchBar = ({ onSearch, placeholder = "Search for components...", customComponents }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   
   // Use custom components list if provided, otherwise use default list
   const components = customComponents || SEARCHABLE_COMPONENTS;
@@ -82,14 +83,17 @@ const SearchBar = ({ onSearch, placeholder = "Search for components...", customC
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7, delay: 0.3 }}
-      className="w-full sm:max-w-xl rounded-lg border border-indigo-800/30 bg-indigo-900/20 p-1 backdrop-blur-sm"
+      transition={{ duration: 0.5, delay: 0.2 }}
+      className={`w-full sm:max-w-xl rounded-full border ${isFocused 
+        ? 'border-primary-500/50 dark:border-primary-500/30 shadow-sm shadow-primary-500/10' 
+        : 'border-secondary-200/70 dark:border-secondary-700/70'} 
+         dark:bg-secondary-800/50 backdrop-blur-sm hover:border-primary-400/50 dark:hover:border-primary-500/30 transition-all duration-300`}
     >
       <form onSubmit={handleSubmit} className="relative flex items-center">
-        <div className="absolute left-3 text-indigo-400">
+        <div className="absolute left-3.5 text-secondary-400 dark:text-secondary-500">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -99,18 +103,20 @@ const SearchBar = ({ onSearch, placeholder = "Search for components...", customC
           type="text"
           value={searchQuery}
           onChange={handleChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           placeholder={placeholder}
-          className="w-full bg-transparent py-2 sm:py-3 pl-10 pr-16 text-indigo-100 placeholder-indigo-400 focus:outline-none text-sm sm:text-base"
+          className="w-full bg-transparent py-2 sm:py-2.5 pl-10 pr-16 text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 dark:placeholder-secondary-500 focus:outline-none text-sm"
         />
-        <div className="absolute right-3 hidden sm:flex items-center space-x-2 text-xs text-indigo-400">
-          <kbd className="px-1.5 py-0.5 rounded border border-indigo-700 bg-indigo-800/50">⌘</kbd>
-          <kbd className="px-1.5 py-0.5 rounded border border-indigo-700 bg-indigo-800/50">K</kbd>
+        <div className="absolute right-3.5 hidden sm:flex items-center space-x-1.5 text-xs text-secondary-400 dark:text-secondary-500">
+          <kbd className="px-1.5 py-0.5 rounded border  dark:border-secondary-700  dark:bg-secondary-800/80">⌘</kbd>
+          <kbd className="px-1.5 py-0.5 rounded border dark:border-secondary-700 dark:bg-secondary-800/80">K</kbd>
         </div>
         {/* Submit button - visible when there's text */}
         {searchQuery && (
           <button
             type="submit"
-            className="absolute right-3 p-1.5 text-indigo-400 hover:text-indigo-200 sm:right-20"
+            className="absolute right-3.5 p-1.5 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 sm:right-20 transition-colors"
             aria-label="Submit search"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,7 +134,7 @@ const SearchBar = ({ onSearch, placeholder = "Search for components...", customC
               setSearchQuery('');
               // Don't trigger search when clearing
             }}
-            className="sm:hidden absolute right-3 p-1 text-indigo-400 hover:text-indigo-200"
+            className="sm:hidden absolute right-3.5 p-1.5 text-secondary-400 hover:text-secondary-500 dark:text-secondary-500 dark:hover:text-secondary-400 transition-colors"
             aria-label="Clear search"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

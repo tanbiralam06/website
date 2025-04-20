@@ -217,7 +217,7 @@ export default function PlaygroundPage() {
           </p>
           <div className="mt-4">
             <a
-              href="https://github.com/yourusername/reacui"
+              href="/components"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"

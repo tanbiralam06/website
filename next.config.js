@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['placeholdercdn.io'],
+    domains: ['placeholdercdn.io', 'randomuser.me'],
+
   },
   experimental: {
     mdxRs: true,

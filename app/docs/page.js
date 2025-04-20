@@ -89,7 +89,7 @@ export default function DocsPage() {
           <ul className="mt-4 space-y-2">
             <li>
               <a 
-                href="https://github.com/yourusername/reacui/issues"
+                href="https://github.com/reacui/reacui/issues"
                 className="text-primary-600 dark:text-primary-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -99,7 +99,7 @@ export default function DocsPage() {
             </li>
             <li>
               <a 
-                href="https://github.com/yourusername/reacui/discussions"
+                href="https://github.com/reacui/reacui/discussions"
                 className="text-primary-600 dark:text-primary-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
