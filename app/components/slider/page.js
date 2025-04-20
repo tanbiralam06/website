@@ -25,23 +25,65 @@ export default function SliderPage() {
     { id: 'api-reference', title: 'API Reference' }
   ];
 
-  // Main example for the top showcase
-  const mainExample = (
-    <div className="w-full max-w-md mx-auto px-4">
+  // State for sliders
+  const [mainSliderValue, setMainSliderValue] = useState(60);
+  const [basicSliderValue, setBasicSliderValue] = useState(40);
+  const [volumeSliderValue, setVolumeSliderValue] = useState(75);
+  const [brightnessSliderValue, setBrightnessSliderValue] = useState(50);
+  const [markersSliderValue, setMarkersSliderValue] = useState(60);
+  const [colorSliders, setColorSliders] = useState({
+    primary: 60,
+    success: 70,
+    danger: 30,
+    custom: 50
+  });
+
+  // Custom Slider Component
+  const InteractiveSlider = ({ value, onChange, min = 0, max = 100, color = "blue" }) => {
+    const handleSliderChange = (e) => {
+      const newValue = parseInt(e.target.value);
+      onChange(newValue);
+    };
+
+    const percentage = ((value - min) / (max - min)) * 100;
+    
+    return (
       <div className="relative pt-1">
+        <input 
+          type="range"
+          min={min}
+          max={max}
+          value={value}
+          onChange={handleSliderChange}
+          className="absolute w-full h-2 opacity-0 cursor-pointer z-10"
+          style={{ top: "4px" }}
+        />
         <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-          <div className="flex flex-col justify-center overflow-hidden bg-blue-500 dark:bg-blue-400" style={{ width: "60%" }}></div>
+          <div 
+            className={`flex flex-col justify-center overflow-hidden bg-${color}-500 dark:bg-${color}-400`} 
+            style={{ width: `${percentage}%` }}
+          ></div>
         </div>
-        <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "60%" }}>
-          <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-blue-500 dark:border-gray-900 dark:bg-blue-400 flex items-center justify-center">
+        <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: `${percentage}%` }}>
+          <div className={`h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-${color}-500 dark:border-gray-900 dark:bg-${color}-400 flex items-center justify-center`}>
           </div>
         </div>
       </div>
+    );
+  };
+
+  // Main example for the top showcase
+  const mainExample = (
+    <div className="w-full max-w-md mx-auto px-4">
+      <InteractiveSlider 
+        value={mainSliderValue} 
+        onChange={setMainSliderValue} 
+      />
     </div>
   );
 
   const mainCode = `<Slider
-  value={60}
+  value={${mainSliderValue}}
   min={0}
   max={100}
   onChange={(value) => console.log(value)}
@@ -91,19 +133,14 @@ export default function SliderPage() {
             <ComponentExample
               example={
                 <div className="w-full max-w-md mx-auto px-4">
-                  <div className="relative pt-1">
-                    <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                      <div className="flex flex-col justify-center overflow-hidden bg-blue-500 dark:bg-blue-400" style={{ width: "40%" }}></div>
-                    </div>
-                    <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "40%" }}>
-                      <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-blue-500 dark:border-gray-900 dark:bg-blue-400 flex items-center justify-center">
-                      </div>
-                    </div>
-                  </div>
+                  <InteractiveSlider 
+                    value={basicSliderValue} 
+                    onChange={setBasicSliderValue} 
+                  />
                 </div>
               }
               code={`<Slider
-  value={40}
+  value={${basicSliderValue}}
   min={0}
   max={100}
   onChange={(value) => console.log(value)}
@@ -122,53 +159,45 @@ export default function SliderPage() {
               example={
                 <div className="w-full max-w-md mx-auto space-y-8 px-4">
                   <div className="relative pt-1">
-                    <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                      <div className="flex flex-col justify-center overflow-hidden bg-blue-500 dark:bg-blue-400" style={{ width: "60%" }}></div>
-                    </div>
-                    <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "60%" }}>
-                      <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-blue-500 dark:border-gray-900 dark:bg-blue-400 flex items-center justify-center">
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={colorSliders.primary} 
+                      onChange={(value) => setColorSliders({...colorSliders, primary: value})} 
+                      color="blue"
+                    />
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Primary (Default)</p>
                   </div>
                   
                   <div className="relative pt-1">
-                    <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                      <div className="flex flex-col justify-center overflow-hidden bg-green-500 dark:bg-green-400" style={{ width: "70%" }}></div>
-                    </div>
-                    <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "70%" }}>
-                      <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-green-500 dark:border-gray-900 dark:bg-green-400 flex items-center justify-center">
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={colorSliders.success} 
+                      onChange={(value) => setColorSliders({...colorSliders, success: value})} 
+                      color="green"
+                    />
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Success</p>
                   </div>
                   
                   <div className="relative pt-1">
-                    <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                      <div className="flex flex-col justify-center overflow-hidden bg-red-500 dark:bg-red-400" style={{ width: "30%" }}></div>
-                    </div>
-                    <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "30%" }}>
-                      <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-red-500 dark:border-gray-900 dark:bg-red-400 flex items-center justify-center">
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={colorSliders.danger} 
+                      onChange={(value) => setColorSliders({...colorSliders, danger: value})} 
+                      color="red"
+                    />
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Danger</p>
                   </div>
                   
                   <div className="relative pt-1">
-                    <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                      <div className="flex flex-col justify-center overflow-hidden bg-purple-500 dark:bg-purple-400" style={{ width: "50%" }}></div>
-                    </div>
-                    <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "50%" }}>
-                      <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-purple-500 dark:border-gray-900 dark:bg-purple-400 flex items-center justify-center">
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={colorSliders.custom} 
+                      onChange={(value) => setColorSliders({...colorSliders, custom: value})} 
+                      color="purple"
+                    />
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Custom</p>
                   </div>
                 </div>
               }
               code={`{/* Primary (Default) */}
 <Slider
-  value={60}
+  value={${colorSliders.primary}}
   min={0}
   max={100}
   color="primary"
@@ -176,7 +205,7 @@ export default function SliderPage() {
 
 {/* Success */}
 <Slider
-  value={70}
+  value={${colorSliders.success}}
   min={0}
   max={100}
   color="success"
@@ -184,7 +213,7 @@ export default function SliderPage() {
 
 {/* Danger */}
 <Slider
-  value={30}
+  value={${colorSliders.danger}}
   min={0}
   max={100}
   color="danger"
@@ -192,7 +221,7 @@ export default function SliderPage() {
 
 {/* Custom */}
 <Slider
-  value={50}
+  value={${colorSliders.custom}}
   min={0}
   max={100}
   color="purple"
@@ -215,17 +244,12 @@ export default function SliderPage() {
                       <label htmlFor="volume-slider" className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Volume
                       </label>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">75%</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">{volumeSliderValue}%</span>
                     </div>
-                    <div className="relative pt-1">
-                      <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                        <div className="flex flex-col justify-center overflow-hidden bg-blue-500 dark:bg-blue-400" style={{ width: "75%" }}></div>
-                      </div>
-                      <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "75%" }}>
-                        <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-blue-500 dark:border-gray-900 dark:bg-blue-400 flex items-center justify-center">
-                        </div>
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={volumeSliderValue} 
+                      onChange={setVolumeSliderValue} 
+                    />
                     <div className="flex justify-between mt-1 text-xs text-gray-600 dark:text-gray-400">
                       <span>0%</span>
                       <span>100%</span>
@@ -237,17 +261,12 @@ export default function SliderPage() {
                       <label htmlFor="brightness-slider" className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         Brightness
                       </label>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">50%</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">{brightnessSliderValue}%</span>
                     </div>
-                    <div className="relative pt-1">
-                      <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                        <div className="flex flex-col justify-center overflow-hidden bg-blue-500 dark:bg-blue-400" style={{ width: "50%" }}></div>
-                      </div>
-                      <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "50%" }}>
-                        <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-blue-500 dark:border-gray-900 dark:bg-blue-400 flex items-center justify-center">
-                        </div>
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={brightnessSliderValue} 
+                      onChange={setBrightnessSliderValue} 
+                    />
                     <div className="flex justify-between mt-1 text-xs text-gray-600 dark:text-gray-400">
                       <span>0%</span>
                       <span>100%</span>
@@ -264,7 +283,7 @@ export default function SliderPage() {
   </div>
   <Slider
     id="volume-slider"
-    value={75}
+    value={${volumeSliderValue}}
     min={0}
     max={100}
     showLimits
@@ -281,7 +300,7 @@ export default function SliderPage() {
   </div>
   <Slider
     id="brightness-slider"
-    value={50}
+    value={${brightnessSliderValue}}
     min={0}
     max={100}
     showLimits
@@ -302,13 +321,10 @@ export default function SliderPage() {
               example={
                 <div className="w-full max-w-md mx-auto px-4">
                   <div className="relative pt-1">
-                    <div className="flex h-2 overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
-                      <div className="flex flex-col justify-center overflow-hidden bg-blue-500 dark:bg-blue-400" style={{ width: "60%" }}></div>
-                    </div>
-                    <div className="absolute inset-y-0 left-0 flex items-center" style={{ left: "60%" }}>
-                      <div className="h-5 w-5 -ml-2.5 rounded-full border-2 border-white bg-blue-500 dark:border-gray-900 dark:bg-blue-400 flex items-center justify-center">
-                      </div>
-                    </div>
+                    <InteractiveSlider 
+                      value={markersSliderValue} 
+                      onChange={setMarkersSliderValue} 
+                    />
                     <div className="flex justify-between mt-2">
                       <div className="flex flex-col items-center">
                         <div className="h-1 w-1 rounded-full bg-gray-400 dark:bg-gray-500"></div>
@@ -335,7 +351,7 @@ export default function SliderPage() {
                 </div>
               }
               code={`<Slider
-  value={60}
+  value={${markersSliderValue}}
   min={0}
   max={100}
   step={25}
