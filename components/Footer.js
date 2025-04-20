@@ -11,8 +11,8 @@ const Footer = () => {
       links: [
         { name: 'Documentation', href: '/docs' },
         { name: 'Components', href: '/components' },
-        { name: 'Playground', href: '/playground' },
-        { name: 'Blog', href: '/blog' },
+        // { name: 'Playground', href: '/playground' },
+        // { name: 'Blog', href: '/blog' },
       ],
     },
     {

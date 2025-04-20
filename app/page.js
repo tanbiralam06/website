@@ -306,7 +306,7 @@ function DashboardWidget({ user }) {
                 className="flex flex-wrap mt-8 gap-4 mx-auto lg:mx-0 justify-center lg:justify-start"
               >
                 <Link
-                  href="/docs/getting-started"
+                  href="/docs/installation"
                   className="relative group overflow-hidden rounded-lg"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-primary-600 group-hover:from-indigo-500 group-hover:to-primary-500 transition-all duration-300"></div>
@@ -1254,7 +1254,7 @@ function DashboardWidget({ user }) {
                 transition={{ duration: 0.7, delay: 0.4 }}
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                  <Link href="/docs/getting-started" className="btn bg-white text-primary-700 hover:bg-primary-50 hover:text-primary-800 shadow-xl shadow-primary-900/20">
+                  <Link href="/docs/installation" className="btn bg-white text-primary-700 hover:bg-primary-50 hover:text-primary-800 shadow-xl shadow-primary-900/20">
                     <span className="flex items-center">
                       <svg className="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

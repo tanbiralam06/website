@@ -44,7 +44,7 @@ const Navbar = () => {
     { name: 'Docs', path: '/docs' },
     { name: 'Testimonials', path: '/testimonials' },
     // { name: 'Blog', path: '/blog' },
-    { name: 'Playground', path: '/playground' },
+    // { name: 'Playground', path: '/playground' },
   ];
 
   const toggleMenu = () => {
